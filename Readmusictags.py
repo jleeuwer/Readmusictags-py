@@ -5,14 +5,14 @@ import logging
 
 #Init
 def f_init():
-    # global vDirectory = "/Volumes/stack/stack/Lijsten/Veronica's Top 1000"
-    global vDirectory = "/Volumes/Muziek/Muzieklijsten/Zomer Top50 kopie"
+    # global vDirectory = "/Volumes/Muziek/Muzieklijsten/Zomer Top50 kopie"
+    global vDirectory = "/Volumes/Muziek/Muzieklijsten/ArrowRock/2022/Top 500"
     global vForce = 1
-    global vTotalTracks = 50
-    global vAlbum = "Zomer Top 50"
+    global vTotalTracks = 500
+    global vAlbum = "ArrowRock Top 500 - 2022 - The Long Versions"
     global vDiscnumber = 1
     global vTotaldiscs = 1
-    global vComment = "BTT12i Project"
+    global vComment = "Compiled by Jan"
 
 def f_init_logging():
     #Set logging level and output
@@ -30,7 +30,7 @@ def f_init_logging():
     # add file handler to logger
     logger.addHandler(file_handler)
 
-def fd_process():
+def f_process():
     for filename in os.listdir(vDirectory):
         if filename.endswith(".aiff") or filename.endswith(".flac") or filename.endswith(".wav") or filename.endswith(".aif"): 
             f = music_tag.load_file(os.path.join(vDirectory, filename))
